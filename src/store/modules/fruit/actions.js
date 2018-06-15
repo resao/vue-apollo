@@ -18,7 +18,7 @@ export default {
         name: name
       }
     }).then(({ data }) => {
-      context.commit(types.MUTATE_FRUITS, data.allFruits)
+      context.commit(types.MUTATE_SELECTED_FRUITS, data.allFruits)
     })
   }
 }

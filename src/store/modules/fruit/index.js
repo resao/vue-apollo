@@ -3,7 +3,8 @@ import mutations from './mutations'
 import getters from './getters'
 
 const state = {
-  fruits: {}
+  fruits: {},
+  selectedFruits: {}
 }
 
 export default {

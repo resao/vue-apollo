@@ -1,5 +1,6 @@
 // Mutations
 export const MUTATE_FRUITS = 'fruit/MUTATE'
+export const MUTATE_SELECTED_FRUITS = 'fruit/SELECTED_MUTATE'
 
 // Actions
 export const FETCH_FRUITS = 'fruit/FETCH'
