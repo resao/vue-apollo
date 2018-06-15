@@ -6,5 +6,10 @@ export default {
   },
   [types.MUTATE_SELECTED_FRUITS]: (state, fruits) => {
     state.selectedFruits = fruits
+  },
+  [types.MUTATE_CREATE_FRUIT]: (state, fruit) => {
+    let fruits = state.fruits.slice()
+    fruits.push(fruit)
+    state.fruits = fruits
   }
 }

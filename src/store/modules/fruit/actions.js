@@ -1,6 +1,7 @@
 import apolloClient from '@/apollo/index.js'
-import allFruit from '@/graphql/allFruit.gql'
-import fruitByName from '@/graphql/fruitByName.gql'
+import allFruit from '@/graphql/queries/allFruit.gql'
+import fruitByName from '@/graphql/queries/fruitByName.gql'
+import createFruit from '@/graphql/mutations/createFruit.gql'
 import * as types from './types'
 
 export default {
@@ -19,6 +20,16 @@ export default {
       }
     }).then(({ data }) => {
       context.commit(types.MUTATE_SELECTED_FRUITS, data.allFruits)
+    })
+  },
+  [types.CREATE_FRUIT]: (context, name) => {
+    apolloClient.mutate({
+      mutation: createFruit,
+      variables: {
+        name: name
+      }
+    }).then(({ data }) => {
+      context.commit(types.MUTATE_CREATE_FRUIT, data.createFruit)
     })
   }
 }
