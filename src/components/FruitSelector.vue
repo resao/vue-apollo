@@ -1,8 +1,10 @@
 <template>
-  <div class="all-fruits">
+  <div class="selected-fruits">
     <h2>Selected Fruits</h2>
-    <input type="text" v-model="name"/>
-    <button @click="selectFruit">Select</button>
+    <form v-on:submit.prevent="selectFruit">
+      <input type="text" v-model="name"/>
+      <button type="submit">Select</button>
+    </form>
     <ul v-if="selectedFruits">
       <li v-for="fruit in selectedFruits" :key="fruit.id">{{fruit.name}} <em v-if="fruit.color">{{fruit.color.name}}</em></li>
     </ul>
